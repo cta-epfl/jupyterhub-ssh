@@ -32,13 +32,14 @@ ssh:
       host_key_path: /etc/jupyterhub-ssh/config/hostKey
 
   image:
-    repository: quay.io/jupyterhub-ssh/ssh
-    tag: "set-by-chartpress"
+    repository: odahub/ssh
+    tag: "0.0.1-0.dev.git.136.ha610981"
     pullPolicy: ""
 
   service:
     type: ClusterIP
-    port: 22
+    port: 9022
+    type: NodePort
 
   podLabels:
     hub.jupyter.org/network-access-hub: "true"
@@ -63,8 +64,8 @@ sftp:
     name: ""
 
   image:
-    repository: quay.io/jupyterhub-ssh/sftp
-    tag: "set-by-chartpress"
+    repository: odahub/sftp
+    tag: "0.0.1-0.dev.git.142.h402a3d6"
     pullPolicy: ""
 
   service:

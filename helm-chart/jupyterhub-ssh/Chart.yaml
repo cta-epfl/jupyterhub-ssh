@@ -1,7 +1,7 @@
 # Chart.yaml v2 reference: https://helm.sh/docs/topics/charts/#the-chartyaml-file
 apiVersion: v2
 name: jupyterhub-ssh
-version: 0.0.1-set.by.chartpress
+version: 0.0.1-0.dev.git.142.h402a3d6
 appVersion: 0.1.0
 description: SSH interface to JupyterHub
 keywords:

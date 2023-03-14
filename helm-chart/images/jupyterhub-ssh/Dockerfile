@@ -39,7 +39,11 @@ WORKDIR /srv/jupyterhub-ssh
 COPY jupyterhub_ssh ./jupyterhub_ssh
 COPY setup.py LICENSE README.md ./
 COPY helm-chart/images/jupyterhub-ssh/jupyterhub_ssh_config.py ./
+RUN pip3 install wheel
+
+USER root
 RUN pip3 install --no-cache-dir .
+USER $NB_UID
 
 # Configure to run jupyterhub_ssh
 # - PYTHONUNBUFFERED help make Python logs made available for k8s directly
